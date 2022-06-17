@@ -29,43 +29,43 @@ export const lightTheme = {
   },
   fonts: {
     textSmRegular: {
-      family: "Poppins",
+      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
       size: "14px",
       weight: "400",
       lineHeight: "20px"
     },
     textSmMedium: {
-      family: "Poppins",
+      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
       size: "14px",
       weight: "500",
       lineHeight: "20px"
     },
     displayXsRegular: {
-      family: "Poppins",
+      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
       size: "24px",
       weight: "400",
       lineHeight: "32px"
     },
     displayXsMedium: {
-      family: "Poppins",
+      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
       size: "24px",
       weight: "500",
       lineHeight: "32px"
     },
     displaySmRegular: {
-      family: 'Poppins',
+      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
       size: "30px",
       weight: "400",
       lineHeight: "38px",
     },
     displaySmMedium: {
-      family: 'Poppins',
+      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
       size: "30px",
       weight: "500",
       lineHeight: "38px",
     },
     displaySmBold: {
-      family: 'Poppins',
+      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
       size: "30px",
       weight: "700",
       lineHeight: "38px",
@@ -102,43 +102,43 @@ export const darkTheme = {
   },
   fonts: {
     textSmRegular: {
-      family: "Poppins",
+      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
       size: "14px",
       weight: "400",
       lineHeight: "20px"
     },
     textSmMedium: {
-      family: "Poppins",
+      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
       size: "14px",
       weight: "500",
       lineHeight: "20px"
     },
     displayXsRegular: {
-      family: "Poppins",
+      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
       size: "24px",
       weight: "400",
       lineHeight: "32px"
     },
     displayXsMedium: {
-      family: "Poppins",
+      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
       size: "24px",
       weight: "500",
       lineHeight: "32px"
     },
     displaySmRegular: {
-      family: 'Poppins',
+      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
       size: "30px",
       weight: "400",
       lineHeight: "38px",
     },
     displaySmMedium: {
-      family: 'Poppins',
+      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
       size: "30px",
       weight: "500",
       lineHeight: "38px",
     },
     displaySmBold: {
-      family: 'Poppins',
+      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
       size: "30px",
       weight: "700",
       lineHeight: "38px",
