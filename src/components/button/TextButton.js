@@ -13,15 +13,17 @@ const StyledButton = styled.button`
   align-items: center;
   
   color: ${props => props.theme.colors.red900};
-  font-family: ${props => props.theme.fonts.textMdMedium.family};
-  font-size: ${props => props.theme.fonts.textMdMedium.size};
-  font-weight: ${props => props.theme.fonts.textMdMedium.weight};
-  line-height: ${props => props.theme.fonts.textMdMedium.lineHeight};
+  font-family: ${props => props.theme.fonts.textSmMedium.family};
+  font-size: ${props => props.theme.fonts.textSmMedium.size};
+  font-weight: ${props => props.theme.fonts.textSmMedium.weight};
+  line-height: ${props => props.theme.fonts.textSmMedium.lineHeight};
 `;
 
-const TextButton = ({ className, children }) => {
+const TextButton = ({ className, children, type, onClick }) => {
   return (
-    <StyledButton className={className}>{children}</StyledButton>
+    <StyledButton className={className} type={type} onClick={onClick}>
+      {children}
+    </StyledButton>
   );
 };
 

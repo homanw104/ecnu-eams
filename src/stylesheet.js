@@ -28,11 +28,41 @@ export const lightTheme = {
     transparentMediumSlateBlue: "rgba(105,81,255,0.05)"
   },
   fonts: {
-    textMdMedium: {
+    textSmRegular: {
+      family: "Poppins",
+      size: "14px",
+      weight: "400",
+      lineHeight: "20px"
+    },
+    textSmMedium: {
       family: "Poppins",
       size: "14px",
       weight: "500",
       lineHeight: "20px"
+    },
+    displayXsRegular: {
+      family: "Poppins",
+      size: "24px",
+      weight: "400",
+      lineHeight: "32px"
+    },
+    displayXsMedium: {
+      family: "Poppins",
+      size: "24px",
+      weight: "500",
+      lineHeight: "32px"
+    },
+    displaySmRegular: {
+      family: 'Poppins',
+      size: "30px",
+      weight: "400",
+      lineHeight: "38px",
+    },
+    displaySmMedium: {
+      family: 'Poppins',
+      size: "30px",
+      weight: "500",
+      lineHeight: "38px",
     },
     displaySmBold: {
       family: 'Poppins',
@@ -71,11 +101,47 @@ export const darkTheme = {
     transparentMediumSlateBlue: "rgba(105,81,255,0.05)"
   },
   fonts: {
+    textSmRegular: {
+      family: "Poppins",
+      size: "14px",
+      weight: "400",
+      lineHeight: "20px"
+    },
     textSmMedium: {
       family: "Poppins",
       size: "14px",
       weight: "500",
       lineHeight: "20px"
+    },
+    displayXsRegular: {
+      family: "Poppins",
+      size: "24px",
+      weight: "400",
+      lineHeight: "32px"
+    },
+    displayXsMedium: {
+      family: "Poppins",
+      size: "24px",
+      weight: "500",
+      lineHeight: "32px"
+    },
+    displaySmRegular: {
+      family: 'Poppins',
+      size: "30px",
+      weight: "400",
+      lineHeight: "38px",
+    },
+    displaySmMedium: {
+      family: 'Poppins',
+      size: "30px",
+      weight: "500",
+      lineHeight: "38px",
+    },
+    displaySmBold: {
+      family: 'Poppins',
+      size: "30px",
+      weight: "700",
+      lineHeight: "38px",
     }
   },
   background: bg_dark

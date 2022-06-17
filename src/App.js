@@ -9,6 +9,10 @@ import InfoPage from "./pages/InfoPage";
 import NavBar from "./components/navigation/NavBar";
 
 import { useTheme } from "./util/UseTheme";
+import CoursePage from "./pages/CoursePage";
+import CourseSelectPage from "./pages/CourseSelectPage";
+import ScorePage from "./pages/ScorePage";
+import TimeTablePage from "./pages/TimeTablePage";
 
 function App() {
   const [theme, toggleTheme, componentMounted] = useTheme();
@@ -24,8 +28,12 @@ function App() {
         <Routes>
           <Route path='login' element={<LoginPage/>}/>
           <Route element={<SideBarLayout/>}>
-            <Route path='' element={<HomePage/>}/>
+            <Route path='home' element={<HomePage/>}/>
             <Route path='info' element={<InfoPage/>}/>
+            <Route path='course' element={<CoursePage/>}/>
+            <Route path='selection' element={<CourseSelectPage/>}/>
+            <Route path='score' element={<ScorePage/>}/>
+            <Route path='timetable' element={<TimeTablePage/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

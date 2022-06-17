@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import TextButton from "../button/TextButton";
 import TextLogo from "../logo/TextLogo";
+import { useNavigate } from "react-router-dom";
 
 export const StyledTextLogo = styled(TextLogo)``;
 export const StyledTextButton = styled(TextButton)``;
@@ -15,10 +16,16 @@ export const StyledNavigation = styled.div`
 `;
 
 const NavBar = ({ handleLogoClick }) => {
+  const navigate = useNavigate();
+
+  const handleLogoutClick = () => {
+    navigate('/login');
+  };
+
   return (
     <StyledNavigation>
       <StyledTextLogo handleClick={handleLogoClick}/>
-      <StyledTextButton>退出登录</StyledTextButton>
+      <StyledTextButton onClick={handleLogoutClick}>退出登录</StyledTextButton>
     </StyledNavigation>
   );
 };

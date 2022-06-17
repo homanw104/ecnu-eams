@@ -1,8 +1,14 @@
+import styled from "styled-components";
+
+const StyledPage = styled.div`
+  
+`;
+
 const HomePage = () => {
   return (
-    <div>
+    <StyledPage>
       Home Page
-    </div>
+    </StyledPage>
   );
 };
 

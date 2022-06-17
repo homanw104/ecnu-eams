@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const InputLabelAutoLayout = styled.div`
@@ -19,6 +19,8 @@ const InputLabelAutoLayout = styled.div`
 `;
 
 const StyledLabel = styled.label`
+  color: ${props => props.theme.colors.gray800};
+  
   /* Label */
   width: 302px;
   height: 24px;
@@ -28,10 +30,6 @@ const StyledLabel = styled.label`
   font-size: ${props => props.theme.fonts.textMdMedium.size};
   font-weight: ${props => props.theme.fonts.textMdMedium.weight};
   line-height: ${props => props.theme.fonts.textMdMedium.lineHeight};
-  /* identical to box height, or 150% */
-  
-  /* Gray/800 */
-  color: ${props => props.theme.colors.gray800};
   
   /* Inside auto layout */
   flex: none;
@@ -67,17 +65,13 @@ const StyledInput = styled.input`
   flex-grow: 1;
 `;
 
-const Input = ({ className, label, name, placeholder }) => {
-  const [value, setValue] = useState('');
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
-
+const Input = ({ className, label='', type='text',
+                 name, value, placeholder, onChange
+}) => {
   return(
     <InputLabelAutoLayout className={className}>
       <StyledLabel>{label}</StyledLabel>
-      <StyledInput type="text" name={name} value={value}
-                   onChange={handleChange} placeholder={placeholder}/>
+      <StyledInput type={type} name={name} value={value} onChange={onChange} placeholder={placeholder}/>
     </InputLabelAutoLayout>
   );
 };

@@ -1,15 +1,18 @@
 import { Outlet } from "react-router-dom";
 
 import SideBar from "../components/navigation/SideBar";
+import styled from "styled-components";
+
+const StyledLayout = styled.div`
+  display: flex;
+`;
 
 const SideBarLayout = () => {
   return (
-    <div>
-      <Outlet>
+    <StyledLayout>
       <SideBar/>
-
-      </Outlet>
-    </div>
+      <Outlet/>
+    </StyledLayout>
   );
 };
 

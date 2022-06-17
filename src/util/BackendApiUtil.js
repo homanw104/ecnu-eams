@@ -12,20 +12,25 @@ export const backendUrl = 'https://api.eams.homans.world:8443'; /* Backend serve
 class BackendApiUtil {
 
   /**
-   * Return Promise of search results from backend API.
-   * @param query search string.
-   * @return {Promise} search results data object.
+   * Return Promise of login results from backend API.
+   * @param username
+   * @param password
+   * @return {Promise} login result.
    * @throws Error error from backend API.
    */
-  static async getSearchData (query) {
-    let getOptions = {
-      method: 'get',
-      url: backendUrl + '/search?name=' + query
-    }
+  static async login(username, password) {
+    let postOptions = {
+      method: 'post',
+      url: backendUrl + '/login',
+      params: {
+        username: username,
+        password: password
+      }
+    };
     try {
-      return await axios(getOptions)
+      return await axios(postOptions);
     } catch (error) {
-      throw new Error(error.message)
+      throw new Error(error.message);
     }
   }
 
@@ -35,7 +40,7 @@ class BackendApiUtil {
    * @return {Promise} track result data object.
    * @throws Error error from backend API.
    */
-  static async getTracksData (id) {
+  static async getTracksData(id) {
     let getOptions = {
       method: 'get',
       url: backendUrl + '/tracks/info?id=' + id
@@ -53,7 +58,7 @@ class BackendApiUtil {
    * @return {Promise} artist result data object.
    * @throws Error error from backend API.
    */
-  static async getArtistsData (id) {
+  static async getArtistsData(id) {
     let getOptions = {
       method: 'get',
       url: backendUrl + '/artists/info?id=' + id
@@ -71,7 +76,7 @@ class BackendApiUtil {
    * @return {Promise} artists list result data object.
    * @throws Error error from backend API.
    */
-  static async getTracksList (query) {
+  static async getTracksList(query) {
     let getOptions = {
       method: 'get',
       url: backendUrl + '/tracks/search?name=' + query
@@ -89,7 +94,7 @@ class BackendApiUtil {
    * @return {Promise} artists list result data object.
    * @throws Error error from backend API.
    */
-  static async getArtistTracks (query) {
+  static async getArtistTracks(query) {
     let getOptions = {
       method: 'get',
       url: backendUrl + '/tracks/searchByArtists?id=' + query

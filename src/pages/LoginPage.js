@@ -7,7 +7,7 @@ const StyledPage = styled.div`
 `;
 
 const LoginPage = () => {
-  return (
+  return(
     <StyledPage>
       <LoginForm/>
       <Background/>

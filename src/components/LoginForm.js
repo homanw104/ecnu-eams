@@ -1,9 +1,12 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import Input from "./form/Input";
 import StampLogo from "./logo/StampLogo";
 import PrimaryButton from "./button/PrimaryButton";
+
+import BackendApiUtil from "../util/BackendApiUtil";
 
 const StyledCard = styled.div`
   background-color: ${props => props.theme.colors.gray050};
@@ -52,7 +55,7 @@ const StyledUsernameInput = styled(Input)`
   top: 137px;
 `;
 
-const StyledPasswordInput = styled(Input)`
+const StyledPasswordInput = styled(Input).attrs({ type: 'password' })`
   position: absolute;
   width: 302px;
   height: 76px;
@@ -60,7 +63,7 @@ const StyledPasswordInput = styled(Input)`
   top: 225px;
 `;
 
-const StyledLoginButton = styled(PrimaryButton)`
+const StyledLoginButton = styled(PrimaryButton).attrs({ type: 'submit' })`
   position: absolute;
   width: 302px;
   height: 40px;
@@ -69,13 +72,31 @@ const StyledLoginButton = styled(PrimaryButton)`
 `;
 
 const LoginForm = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
+  const handleOnSubmit = (event) => {
+    event.preventDefault();
+    BackendApiUtil.login(username, password).then((response) => {
+      if (response.data['code'] === 0) {
+        navigate('/home');
+      } else {
+        setUsername('');
+        setPassword('');
+      }
+    });
+  }
+
   return(
     <StyledCard>
       <StyledStampLogo/>
       <StyledTitle>登录</StyledTitle>
-      <StyledUsernameInput onChnage label='用户名' name='username'/>
-      <StyledPasswordInput label='密码' name='password'/>
-      <StyledLoginButton>登录</StyledLoginButton>
+      <form onSubmit={handleOnSubmit}>
+        <StyledUsernameInput onChange={e => setUsername(e.target.value)} value={username} label='用户名' name='username'/>
+        <StyledPasswordInput onChange={e => setPassword(e.target.value)} value={password} label='密码' name='password'/>
+        <StyledLoginButton>登录</StyledLoginButton>
+      </form>
     </StyledCard>
   );
 };
