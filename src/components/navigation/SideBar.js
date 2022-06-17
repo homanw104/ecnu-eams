@@ -1,9 +1,11 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 
 import SecondaryButton from "../button/SecondaryButton";
 import NameCard from "../NameCard";
-import {useNavigate} from "react-router-dom";
+import BackendApiUtil from "../../util/BackendApiUtil";
+import CookieUtil from "../../util/CookieUtil";
 
 const StyledCard = styled.div`
   background-color: ${props => props.theme.colors.white};
@@ -24,10 +26,20 @@ const AutoLayout = styled.div`
 
 const SideBar = () => {
   const navigate = useNavigate();
+  const [title, setTitle] = useState('姓名');
+  const [subtitle, setSubtitle] = useState('学号');
+
+  useEffect(() => {
+    const id = CookieUtil.getCookie('username')
+    BackendApiUtil.getStudentInfo(id).then((response) => {
+      setTitle(response.data['name']);
+      setSubtitle('学号 ' + id);
+    });
+  });
 
   return(
     <StyledCard>
-      <StyledNameCard/>
+      <StyledNameCard title={title} subtitle={subtitle}/>
       <AutoLayout>
         <SecondaryButton onClick={() => navigate('course')}>开课查询</SecondaryButton>
         <SecondaryButton onClick={() => navigate('selection')}>学生选课</SecondaryButton>

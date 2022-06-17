@@ -26,10 +26,10 @@ const StyledLabel = styled.label`
   height: 24px;
 
   /* text-md/Medium */
-  font-family: ${props => props.theme.fonts.textMdMedium.family};
-  font-size: ${props => props.theme.fonts.textMdMedium.size};
-  font-weight: ${props => props.theme.fonts.textMdMedium.weight};
-  line-height: ${props => props.theme.fonts.textMdMedium.lineHeight};
+  font-family: ${props => props.theme.fonts.textSmMedium.family};
+  font-size: ${props => props.theme.fonts.textSmMedium.size};
+  font-weight: ${props => props.theme.fonts.textSmMedium.weight};
+  line-height: ${props => props.theme.fonts.textSmMedium.lineHeight};
   
   /* Inside auto layout */
   flex: none;

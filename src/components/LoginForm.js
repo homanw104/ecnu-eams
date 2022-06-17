@@ -7,6 +7,7 @@ import StampLogo from "./logo/StampLogo";
 import PrimaryButton from "./button/PrimaryButton";
 
 import BackendApiUtil from "../util/BackendApiUtil";
+import CookieUtil from "../util/CookieUtil";
 
 const StyledCard = styled.div`
   background-color: ${props => props.theme.colors.gray050};
@@ -80,6 +81,8 @@ const LoginForm = () => {
     event.preventDefault();
     BackendApiUtil.login(username, password).then((response) => {
       if (response.data['code'] === 0) {
+        CookieUtil.setCookie('username', username, 7);
+        CookieUtil.setCookie('role', response.data['role'], 7);
         navigate('/home');
       } else {
         setUsername('');

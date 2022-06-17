@@ -35,15 +35,18 @@ class BackendApiUtil {
   }
 
   /**
-   * Return Promise of search results from backend API.
-   * @param id track's ID
-   * @return {Promise} track result data object.
+   * Return Promise of results from backend API.
+   * @param id Student ID
+   * @return {Promise} Student info data object.
    * @throws Error error from backend API.
    */
-  static async getTracksData(id) {
+  static async getStudentInfo(id) {
     let getOptions = {
       method: 'get',
-      url: backendUrl + '/tracks/info?id=' + id
+      url: backendUrl + '/showStudentInformation',
+      params: {
+        id: id
+      }
     }
     try {
       return axios(getOptions)
@@ -51,61 +54,6 @@ class BackendApiUtil {
       throw new Error(error.message)
     }
   }
-
-  /**
-   * Return Promise of search results from backend API.
-   * @param id artist's ID
-   * @return {Promise} artist result data object.
-   * @throws Error error from backend API.
-   */
-  static async getArtistsData(id) {
-    let getOptions = {
-      method: 'get',
-      url: backendUrl + '/artists/info?id=' + id
-    }
-    try {
-      return axios(getOptions)
-    } catch (error) {
-      throw new Error(error.message)
-    }
-  }
-
-  /**
-   * Return Promise of search results from backend API.
-   * @param query artist's name
-   * @return {Promise} artists list result data object.
-   * @throws Error error from backend API.
-   */
-  static async getTracksList(query) {
-    let getOptions = {
-      method: 'get',
-      url: backendUrl + '/tracks/search?name=' + query
-    }
-    try {
-      return axios(getOptions)
-    } catch (error) {
-      throw new Error(error.message)
-    }
-  }
-
-  /**
-   * Return Promise of search results from backend API.
-   * @param query artist's tracks
-   * @return {Promise} artists list result data object.
-   * @throws Error error from backend API.
-   */
-  static async getArtistTracks(query) {
-    let getOptions = {
-      method: 'get',
-      url: backendUrl + '/tracks/searchByArtists?id=' + query
-    }
-    try {
-      return axios(getOptions)
-    } catch (error) {
-      throw new Error(error.message)
-    }
-  }
-
 }
 
 export default BackendApiUtil;

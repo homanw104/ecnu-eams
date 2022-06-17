@@ -1,5 +1,3 @@
-// document.body.style.overflow = "hidden";
-
 const InfoPage = () => {
   return (
     <div>

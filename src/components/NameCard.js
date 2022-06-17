@@ -52,15 +52,15 @@ export const StyledTextButton = styled(TextButton)`
   margin-top: 28px;
 `;
 
-const NameCard = ({ className }) => {
+const NameCard = ({ className, title, subtitle }) => {
   const navigate = useNavigate();
 
   return(
     <StyledCard className={className}>
       <StyledImg src={default_avatar}/>
       <AutoLayout>
-        <StyledTitle>王桂王</StyledTitle>
-        <StyledSubtitle>学号 10195101563</StyledSubtitle>
+        <StyledTitle>{title}</StyledTitle>
+        <StyledSubtitle>{subtitle}</StyledSubtitle>
         <StyledTextButton onClick={() => navigate('info')}>查看个人信息</StyledTextButton>
       </AutoLayout>
     </StyledCard>

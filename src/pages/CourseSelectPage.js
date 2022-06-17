@@ -1,7 +1,7 @@
 const CourseSelectPage = () => {
   return (
     <div>
-      CoursePage
+      CourseSelectionPage
     </div>
   );
 };
