@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components'
 import { lightTheme, darkTheme } from 'stylesheet.js'
 
@@ -23,7 +23,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-      <BrowserRouter>
+      <HashRouter>
         <NavBar handleLogoClick={toggleTheme}/>
         <Routes>
           <Route path='' element={<LoadingPage/>}/>
@@ -37,7 +37,7 @@ function App() {
             <Route path='timetable' element={<TimeTablePage/>}/>
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </ThemeProvider>
   );
 }
