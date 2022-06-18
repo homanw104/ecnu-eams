@@ -1,27 +1,49 @@
 # ECNU EAMS
 
-A frontend for the course management system.
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A frontend of the course management system.
+For backend documentation, visit [demoProject2](https://github.com/MxaWnag/demoProject2).
 
-## Features
+## Project Overview
+
+This project is aligned with prototype built with Figma.
+Explore the high-fidelity prototype [here](https://www.figma.com/proto/ecylMvF887PwM8H7wb8qDi).
+
+Live demo is currently deployed on [https://eams.homans.world](https://eams.homans.world).
+It will stay online until September 2022.
+Also, checkout frameworks & libraries used in this project:
+
+* [ReactJS](https://reactjs.org/) - A JavaScript library for building user interfaces
+* [Styled Components](https://styled-components.com/) - Visual primitives for the component age
+* [Axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js
+
+## Featured Highlights
+
+Hint: Switch between the themes by clicking the logo in the upper left corner.
 
 ### Login Screen
 
-![](assets/img_0.png)
-
-Switching between the themes is available by clicking the logo in the upper left corner.
+![](assets/img_00.png)
 
 ### Home Screen
 
-Under development.
+![](assets/img_01.png)
 
 ### Course Selection Page
 
-Under development.
+![](assets/img_02.png)
+
+### Check User Info
+
+![](assets/img_03.png)
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+
+Install dependencies.\
+Running this is mandatory before executing any other commands.
 
 ### `npm start`
 
@@ -30,11 +52,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
@@ -46,12 +63,36 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Project Architecture
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The project architecture may not be permanent and is only for reference.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```txt
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    ┌─────────────────────────┐   ┌──────────────────────────────────────────────────┐
+    │                         │   │                                                  │
+    │  USER BROWSER           │   │  FRONTEND SERVER: eams.homans.world              │
+    │                         │   │                                                  │
+    │                         │   │ ┌────────────┐   ┌─────────────────────────────┐ │
+    │  1. Fetch HTML page.  ──┼───┼─► port: 443  ├───►                             │ │
+    │                         │   │ │            │   │ STATIC FILES . . .          │ │
+    │                         │   │ │            │   │                             │ │
+    │  2. Get HTML, js, img ◄─┼───┼─┤ nginx      ◄───┤                             │ │
+    │     resources, etc.     │   │ └────────────┘   └─────────────────────────────┘ │
+    │                         │   │                                                  │
+    │  3. Browser runs js.    │   └──────────────────────────────────────────────────┘
+    │                         │
+    │                         │   ┌──────────────────────────────────────────────────┐
+    │   . . .                 │   │                                                  │
+    │                         │   │  BACKEND SERVER: api.eams.homans.world           │
+    │                         │   │                                                  │
+    │                         │   │ ┌────────────┐   ┌────────────┐   ┌────────────┐ │
+    │  4. Fetch data from   ──┼───┼─► port: 8443 ├───► port: 8080 ├───► port: 8809 │ │
+    │     backend server.     │   │ │            │   │            │   │            │ │
+    │                         │   │ │            │   │            │   │            │ │
+    │  5. Render page with  ◄─┼───┼─┤ nginx      ◄───┤ java       ◄───┤ mysql      │ │
+    │     fetched data.       │   │ └────────────┘   └────────────┘   └────────────┘ │
+    │                         │   │                                                  │
+    └─────────────────────────┘   └──────────────────────────────────────────────────┘
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
