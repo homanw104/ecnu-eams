@@ -1,19 +1,20 @@
 import { Outlet } from "react-router-dom";
-
-import SideBar from "../components/navigation/SideBar";
 import styled from "styled-components";
+
+import NavBar from "../navigation/NavBar";
 
 const StyledLayout = styled.div`
   display: flex;
+  flex-direction: column;
 `;
 
-const SideBarLayout = () => {
+const NavBarLayout = ({ handleLogoClick }) => {
   return (
     <StyledLayout>
-      <SideBar/>
+      <NavBar handleLogoClick={handleLogoClick}/>
       <Outlet/>
     </StyledLayout>
   );
 };
 
-export default SideBarLayout;
+export default NavBarLayout;

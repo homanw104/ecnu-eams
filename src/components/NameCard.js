@@ -50,6 +50,8 @@ const StyledSubtitle = styled.div`
 
 export const StyledTextButton = styled(TextButton)`
   margin-top: 28px;
+  margin-left: 0;
+  margin-right: 0;
 `;
 
 const NameCard = ({ className, title, subtitle }) => {

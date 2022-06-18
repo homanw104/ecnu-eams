@@ -6,6 +6,7 @@ const InputLabelAutoLayout = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  
   padding: 0;
   gap: 6px;
   width: 302px;
@@ -63,9 +64,15 @@ const StyledInput = styled.input`
   order: 1;
   align-self: stretch;
   flex-grow: 1;
+
+  &:active {
+    box-shadow: 0 0 0 4px #BBF7D0;
+  }
 `;
 
-const Input = ({ className, label='', type='text',
+const Input = ({ className,
+                 label='',
+                 type='text',
                  name, value, placeholder, onChange
 }) => {
   return(

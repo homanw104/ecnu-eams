@@ -3,10 +3,9 @@ import styled from "styled-components";
 
 const StyledButton = styled.button`
   background-color: transparent;
-  height: 20px;
   border: none;
+  overflow: hidden;
   padding: 0;
-  margin: 0;
 
   display: flex;
   justify-content: center;
@@ -17,6 +16,14 @@ const StyledButton = styled.button`
   font-size: ${props => props.theme.fonts.textSmMedium.size};
   font-weight: ${props => props.theme.fonts.textSmMedium.weight};
   line-height: ${props => props.theme.fonts.textSmMedium.lineHeight};
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    text-decoration: underline;
+  }
 `;
 
 const TextButton = ({ className, children, type, onClick }) => {

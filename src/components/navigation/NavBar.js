@@ -8,7 +8,7 @@ import CookieUtil from "../../util/CookieUtil";
 
 export const StyledTextLogo = styled(TextLogo)``;
 export const StyledTextButton = styled(TextButton)``;
-export const StyledNavigation = styled.div`
+export const StyledNavBar = styled.div`
   background-color: ${props => props.theme.colors.gray050};
   padding: 16px 54px;
   display: flex;
@@ -22,21 +22,22 @@ const NavBar = ({ handleLogoClick }) => {
 
   const handleLogoutClick = () => {
     CookieUtil.eraseCookie('username');
+    CookieUtil.eraseCookie('role');
     navigate('/login');
   };
 
   if (location.pathname === '/login') {
     return (
-      <StyledNavigation>
+      <StyledNavBar>
         <StyledTextLogo handleClick={handleLogoClick}/>
-      </StyledNavigation>
+      </StyledNavBar>
     );
   } else {
     return (
-      <StyledNavigation>
+      <StyledNavBar>
         <StyledTextLogo handleClick={handleLogoClick}/>
         <StyledTextButton onClick={handleLogoutClick}>退出登录</StyledTextButton>
-      </StyledNavigation>
+      </StyledNavBar>
     );
   }
 };
