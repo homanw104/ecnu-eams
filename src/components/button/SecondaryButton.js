@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
+
 const StyledButton = styled.button`
-  background-color: transparent;
+  background-color: ${props => props['selected'] ? props.theme.colors.gray050 : 'transparent'};
   border-width: 0;
   border-radius: 6px;
   overflow: hidden;
@@ -35,9 +36,10 @@ const StyledButton = styled.button`
   }
 `;
 
-const SecondaryButton = ({ className, children, type, onClick }) => {
+
+const SecondaryButton = ({ className, selected, children, type, onClick }) => {
   return (
-    <StyledButton className={className} type={type} onClick={onClick}>
+    <StyledButton selected={selected} className={className} type={type} onClick={onClick}>
       {children}
     </StyledButton>
   );

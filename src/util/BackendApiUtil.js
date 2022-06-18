@@ -27,11 +27,7 @@ class BackendApiUtil {
         password: password
       }
     };
-    try {
-      return await axios(postOptions);
-    } catch (error) {
-      throw new Error(error.message);
-    }
+    return axios(postOptions);
   }
 
   /**
@@ -47,12 +43,8 @@ class BackendApiUtil {
       params: {
         id: id
       }
-    }
-    try {
-      return axios(getOptions)
-    } catch (error) {
-      throw new Error(error.message)
-    }
+    };
+    return axios(getOptions);
   }
 }
 

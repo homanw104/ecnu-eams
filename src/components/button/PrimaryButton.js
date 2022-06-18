@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+
 const StyledButton = styled.button`
   background-color: ${props => props.theme.colors.red900};
   box-shadow: 0 1px 2px 0 ${props => props.theme.colors.transparentMediumSlateBlue};
@@ -25,6 +26,7 @@ const StyledButton = styled.button`
     box-shadow: 0 0 0 4px #BBF7D0;
   }
 `;
+
 
 const PrimaryButton = ({ className, children, type, onClick }) => {
   return (

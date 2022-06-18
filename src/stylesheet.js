@@ -1,6 +1,64 @@
 import bg_dark from "assets/background_dark.png";
 import bg_light from "assets/background_light.png";
 
+const fontFamily = '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"';
+const fontList = {
+  textSmRegular: {
+    family: fontFamily,
+    size: "14px",
+    weight: "400",
+    lineHeight: "20px"
+  },
+  textSmMedium: {
+    family: fontFamily,
+    size: "14px",
+    weight: "500",
+    lineHeight: "20px"
+  },
+  displayXsRegular: {
+    family: fontFamily,
+    size: "24px",
+    weight: "400",
+    lineHeight: "32px"
+  },
+  displayXsMedium: {
+    family: fontFamily,
+    size: "24px",
+    weight: "500",
+    lineHeight: "32px"
+  },
+  displaySmRegular: {
+    family: fontFamily,
+    size: "30px",
+    weight: "400",
+    lineHeight: "38px",
+  },
+  displaySmMedium: {
+    family: fontFamily,
+    size: "30px",
+    weight: "500",
+    lineHeight: "38px",
+  },
+  displaySmBold: {
+    family: fontFamily,
+    size: "30px",
+    weight: "700",
+    lineHeight: "38px",
+  },
+  displayMdRegular: {
+    family: fontFamily,
+    size: "36px",
+    weight: "400",
+    lineHeight: "44px",
+  },
+  displayMdMedium: {
+    family: fontFamily,
+    size: "36px",
+    weight: "500",
+    lineHeight: "44px",
+  }
+};
+
 export const lightTheme = {
   colors: {
     red900: "rgba(172,38,52,1)",
@@ -27,50 +85,7 @@ export const lightTheme = {
     paleTurquoise: "rgba(187,247,208,1)",
     transparentMediumSlateBlue: "rgba(105,81,255,0.05)"
   },
-  fonts: {
-    textSmRegular: {
-      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
-      size: "14px",
-      weight: "400",
-      lineHeight: "20px"
-    },
-    textSmMedium: {
-      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
-      size: "14px",
-      weight: "500",
-      lineHeight: "20px"
-    },
-    displayXsRegular: {
-      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
-      size: "24px",
-      weight: "400",
-      lineHeight: "32px"
-    },
-    displayXsMedium: {
-      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
-      size: "24px",
-      weight: "500",
-      lineHeight: "32px"
-    },
-    displaySmRegular: {
-      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
-      size: "30px",
-      weight: "400",
-      lineHeight: "38px",
-    },
-    displaySmMedium: {
-      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
-      size: "30px",
-      weight: "500",
-      lineHeight: "38px",
-    },
-    displaySmBold: {
-      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
-      size: "30px",
-      weight: "700",
-      lineHeight: "38px",
-    }
-  },
+  fonts: fontList,
   background: bg_light
 };
 
@@ -100,49 +115,6 @@ export const darkTheme = {
     paleTurquoise: "rgba(187,247,208,1)",
     transparentMediumSlateBlue: "rgba(105,81,255,0.05)"
   },
-  fonts: {
-    textSmRegular: {
-      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
-      size: "14px",
-      weight: "400",
-      lineHeight: "20px"
-    },
-    textSmMedium: {
-      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
-      size: "14px",
-      weight: "500",
-      lineHeight: "20px"
-    },
-    displayXsRegular: {
-      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
-      size: "24px",
-      weight: "400",
-      lineHeight: "32px"
-    },
-    displayXsMedium: {
-      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
-      size: "24px",
-      weight: "500",
-      lineHeight: "32px"
-    },
-    displaySmRegular: {
-      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
-      size: "30px",
-      weight: "400",
-      lineHeight: "38px",
-    },
-    displaySmMedium: {
-      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
-      size: "30px",
-      weight: "500",
-      lineHeight: "38px",
-    },
-    displaySmBold: {
-      family: '"PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei"',
-      size: "30px",
-      weight: "700",
-      lineHeight: "38px",
-    }
-  },
+  fonts: fontList,
   background: bg_dark
 };

@@ -35,18 +35,18 @@ function App() {
         <Routes>
 
           <Route element={<NavBarLayout handleLogoClick={toggleTheme}/>}>
-            <Route path='' element={<LoadingPage/>}/>
-            <Route path='login' element={<LoginPage/>}/>
+            <Route path='/' element={<LoadingPage/>}/>
+            <Route path='/login' element={<LoginPage/>}/>
             <Route element={<SideBarLayout/>}>
-              <Route path='home' element={<HomePage/>}/>
-              <Route path='info' element={<InfoPage/>}/>
-              <Route path='course/query' element={<CourseQueryPage/>}/>
-              <Route path='course/select' element={<CourseSelectPage/>}/>
-              <Route path='course/manage' element={<CourseManagePage/>}/>
-              <Route path='user/manage' element={<UserManagePage/>}/>
-              <Route path='semester/manage' element={<SemesterManagePage/>}/>
-              <Route path='score' element={<ScorePage/>}/>
-              <Route path='timetable' element={<TimeTablePage/>}/>
+              <Route path='/home' element={<HomePage/>}/>
+              <Route path='/info' element={<InfoPage/>}/>
+              <Route path='/course/query' element={<CourseQueryPage/>}/>
+              <Route path='/course/select' element={<CourseSelectPage/>}/>
+              <Route path='/course/manage' element={<CourseManagePage/>}/>
+              <Route path='/user/manage' element={<UserManagePage/>}/>
+              <Route path='/semester/manage' element={<SemesterManagePage/>}/>
+              <Route path='/score' element={<ScorePage/>}/>
+              <Route path='/timetable' element={<TimeTablePage/>}/>
             </Route>
           </Route>
 

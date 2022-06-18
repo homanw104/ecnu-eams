@@ -5,6 +5,7 @@ import styled from "styled-components";
 import default_avatar from "assets/default_avatar.jpg";
 import TextButton from "./button/TextButton";
 
+
 const StyledCard = styled.div`
   background-color: ${props => props.theme.colors.gray050};
   border-radius: 6px;
@@ -53,6 +54,7 @@ export const StyledTextButton = styled(TextButton)`
   margin-left: 0;
   margin-right: 0;
 `;
+
 
 const NameCard = ({ className, title, subtitle }) => {
   const navigate = useNavigate();

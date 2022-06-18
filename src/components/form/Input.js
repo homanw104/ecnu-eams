@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+
 const InputLabelAutoLayout = styled.div`
   /* Auto layout */
   display: flex;
@@ -66,9 +67,18 @@ const StyledInput = styled.input`
   flex-grow: 1;
 
   &:active {
+    outline: none;
+    border: 1px solid ${props => props.theme.colors.gray400};
+    box-shadow: 0 0 0 4px #BBF7D0;
+  }
+  
+  &:focus {
+    outline: none;
+    border: 1px solid ${props => props.theme.colors.gray400};
     box-shadow: 0 0 0 4px #BBF7D0;
   }
 `;
+
 
 const Input = ({ className,
                  label='',

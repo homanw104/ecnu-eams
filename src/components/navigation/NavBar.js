@@ -6,6 +6,7 @@ import TextButton from "../button/TextButton";
 import TextLogo from "../logo/TextLogo";
 import CookieUtil from "../../util/CookieUtil";
 
+
 export const StyledTextLogo = styled(TextLogo)``;
 export const StyledTextButton = styled(TextButton)``;
 export const StyledNavBar = styled.div`
@@ -15,6 +16,7 @@ export const StyledNavBar = styled.div`
   align-items: center;
   justify-content: space-between;
 `;
+
 
 const NavBar = ({ handleLogoClick }) => {
   const navigate = useNavigate();

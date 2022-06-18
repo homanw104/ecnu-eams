@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+
 const StyledButton = styled.button`
   background-color: transparent;
   border: none;
@@ -25,6 +26,7 @@ const StyledButton = styled.button`
     text-decoration: underline;
   }
 `;
+
 
 const TextButton = ({ className, children, type, onClick }) => {
   return (

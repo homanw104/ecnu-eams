@@ -1,16 +1,16 @@
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 import CookieUtil from "../util/CookieUtil";
-import {useEffect} from "react";
 
 const LoadingPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
     if (CookieUtil.getCookie('username') != null) {
-      navigate('home');
+      navigate('/home');
     } else {
-      navigate('login');
+      navigate('/login');
     }
   });
 
