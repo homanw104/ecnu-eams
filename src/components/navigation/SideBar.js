@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import SecondaryButton from "../button/SecondaryButton";
-import StampLogo from "../logo/StampLogo";
 import NameCard from "../NameCard";
+import { ReactComponent as StampLogo } from "assets/ecnu_logo.svg";
 
 import BackendApiUtil from "../../util/BackendApiUtil";
 import CookieUtil from "../../util/CookieUtil";
@@ -15,18 +15,16 @@ const StyledSideBar = styled.nav`
   position: relative;
   width: 354px;
   height: calc(100vh - 80px);
-  
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 `;
 
 const StyledStampLogo = styled(StampLogo)`
-  filter: invert(5%);
+  fill: rgba(0,0,0,0.01);
   position: absolute;
   width: 374px;
   height: 374px;
-  
   left: -103px;
   bottom: -187px;
 `;
@@ -38,7 +36,6 @@ const StyledNameCard = styled(NameCard)`
 const AutoLayout = styled.div`
   margin-left: 24px;
   margin-right: 24px;
-  
   display: flex;
   flex-direction: column;
   align-items: flex-start;

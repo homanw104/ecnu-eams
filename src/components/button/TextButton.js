@@ -4,8 +4,8 @@ import styled from "styled-components";
 
 const StyledButton = styled.button`
   background-color: transparent;
-  border: none;
   overflow: hidden;
+  border: none;
   padding: 0;
 
   display: flex;

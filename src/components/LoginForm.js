@@ -4,9 +4,9 @@ import styled from "styled-components";
 
 import Input from "./form/Input";
 import Checkbox from "./form/Checkbox";
-import StampLogo from "./logo/StampLogo";
 import PrimaryButton from "./button/PrimaryButton";
 import TextButton from "./button/TextButton";
+import { ReactComponent as StampLogo } from "assets/ecnu_logo.svg";
 
 import BackendApiUtil from "../util/BackendApiUtil";
 import CookieUtil from "../util/CookieUtil";
@@ -33,6 +33,7 @@ const StyledCard = styled.div`
 `;
 
 const StyledStampLogo = styled(StampLogo)`
+  fill: rgba(255,255,255,0.3);
   position: absolute;
   width: 475px;
   height: 475px;
@@ -90,7 +91,7 @@ const StyledLabel = styled.label`
   line-height: ${props => props.theme.fonts.textSmMedium.lineHeight};
 `;
 
-const StyledTextButton = styled(TextButton)`
+const StyledTextButton = styled(TextButton).attrs({ type: 'button' })`
   display: inline;
 `;
 
@@ -101,7 +102,7 @@ const StyledSpan = styled.span`
 const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(true);
   const navigate = useNavigate();
 
   const handleOnClick = () => {
@@ -110,6 +111,12 @@ const LoginForm = () => {
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
+
+    if (checked === false) {
+      setChecked(true);
+      return;
+    }
+
     BackendApiUtil.login(username, password).then((response) => {
       if (response.data['code'] === 0) {
         CookieUtil.setCookie('username', username, 7);

@@ -3,12 +3,18 @@ import React from "react";
 import styled from "styled-components";
 
 import TextButton from "../button/TextButton";
-import TextLogo from "../logo/TextLogo";
 import CookieUtil from "../../util/CookieUtil";
+import { ReactComponent as TextLogo } from "assets/ecnu_logo_text.svg";
 
 
-export const StyledTextLogo = styled(TextLogo)``;
 export const StyledTextButton = styled(TextButton)``;
+
+export const StyledTextLogo = styled(TextLogo)`
+  fill: #b70031;
+  width: 274px;
+  height: 48px;
+`;
+
 export const StyledNavBar = styled.div`
   background-color: ${props => props.theme.colors.gray050};
   padding: 16px 54px;
@@ -18,7 +24,7 @@ export const StyledNavBar = styled.div`
 `;
 
 
-const NavBar = ({ handleLogoClick }) => {
+const NavBar = ({ className, handleLogoClick, ...props }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -30,14 +36,14 @@ const NavBar = ({ handleLogoClick }) => {
 
   if (location.pathname === '/login') {
     return (
-      <StyledNavBar>
-        <StyledTextLogo handleClick={handleLogoClick}/>
+      <StyledNavBar className={className} {...props}>
+        <StyledTextLogo onClick={handleLogoClick}/>
       </StyledNavBar>
     );
   } else {
     return (
-      <StyledNavBar>
-        <StyledTextLogo handleClick={handleLogoClick}/>
+      <StyledNavBar className={className} {...props}>
+        <StyledTextLogo onClick={handleLogoClick}/>
         <StyledTextButton onClick={handleLogoutClick}>退出登录</StyledTextButton>
       </StyledNavBar>
     );
