@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import TextButton from "../button/TextButton";
 import CookieUtil from "../../util/CookieUtil";
-import { ReactComponent as TextLogo } from "assets/ecnu_logo_text.svg";
+import { ReactComponent as TextLogo } from "assets/ecnu_logo_text_en.svg";
 
 
 export const StyledTextButton = styled(TextButton)``;

@@ -11,34 +11,24 @@ const InputLabelAutoLayout = styled.div`
   gap: 6px;
   width: 302px;
   height: 76px;
-  
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 1;
 `;
 
 const StyledLabel = styled.label`
   color: ${props => props.theme.colors.gray800};
-  width: 302px;
-  height: 24px;
-  z-index: 100;
-
   font-family: ${props => props.theme.fonts.textSmMedium.family};
   font-size: ${props => props.theme.fonts.textSmMedium.size};
   font-weight: ${props => props.theme.fonts.textSmMedium.weight};
   line-height: ${props => props.theme.fonts.textSmMedium.lineHeight};
-  
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
+  width: 302px;
+  height: 24px;
 `;
 
 const StyledInput = styled.input`
   background: ${props => props.theme.colors.white};
   border: 1px solid ${props => props.theme.colors.gray200};
+  box-shadow: ${props => props.theme.shadows.xs};
   box-sizing: border-box;
+  border-radius: 8px;
 
   display: flex;
   flex-direction: row;
@@ -48,20 +38,12 @@ const StyledInput = styled.input`
   gap: 8px;
   width: 302px;
   height: 46px;
-  z-index: 100;
   
-  box-shadow: ${props => props.theme.shadows.xs};
-  border-radius: 8px;
-
+  color: ${props => props.theme.colors.gray500};
   font-family: ${props => props.theme.fonts.textSmRegular.family};
   font-size: ${props => props.theme.fonts.textSmRegular.size};
   font-weight: ${props => props.theme.fonts.textSmRegular.weight};
   line-height: ${props => props.theme.fonts.textSmRegular.lineHeight};
-  
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 1;
 
   &:active {
     outline: none;

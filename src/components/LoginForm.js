@@ -20,14 +20,14 @@ const StyledCard = styled.div`
   position: absolute;
   width: 390px;
   height: 520px;
-  left: 50%;
-  right: 0;
+  left: max(50%, (100vw - 470px) * 0.8 + 235px);
+  right: min(50%, (100vw - 470px) * 0.2 + 235px);
   top: 0;
   bottom: 0;
-  margin: auto;
+  margin: auto -195px auto -195px;
   overflow: hidden;
   
-  display: flex;
+  display: flow;
   flex-direction: column;
   align-items: flex-start;
 `;
@@ -42,6 +42,7 @@ const StyledStampLogo = styled(StampLogo)`
 `;
 
 const StyledForm = styled.form`
+  position: relative;
   z-index: 100;
 `;
 
@@ -52,9 +53,11 @@ const StyledTitle = styled.div`
   font-weight: ${props => props.theme.fonts.displaySmBold.weight};
   line-height: ${props => props.theme.fonts.displaySmBold.lineHeight};
 
+  position: relative;
   margin: 60px 44px 0;
   width: 302px;
   height: 41px;
+  z-index: 100;
 `;
 
 const StyledUsernameInput = styled(Input)`
@@ -77,7 +80,7 @@ const StyledLoginButton = styled(PrimaryButton).attrs({ type: 'submit' })`
 
 const StyledLabel = styled.label`
   margin: 69px 44px 0;
-  padding: 0 2px;
+  padding-left: 2px;
   height: 20px;
   
   display: flex;
