@@ -32,14 +32,14 @@ const StyledButton = styled.button`
 
   &:active {
     background-color: ${props => props.theme.colors.gray100};
-    box-shadow: 0 1px 2px rgba(42, 51, 66, 0.06);
+    box-shadow: ${props => props.theme.shadows.xs};;
   }
 `;
 
 
-const SecondaryButton = ({ className, selected, children, type, onClick }) => {
+const SecondaryButton = ({ className, selected, children, type, onClick, ...props }) => {
   return (
-    <StyledButton selected={selected} className={className} type={type} onClick={onClick}>
+    <StyledButton className={className} selected={selected} type={type} onClick={onClick} {...props}>
       {children}
     </StyledButton>
   );

@@ -35,17 +35,17 @@ const HomePage = () => {
     if (role === 'student') {
       BackendApiUtil.getStudentInfo(id).then((response) => {
         setTitle(response.data['name'].slice(0, 1) + '同学，欢迎您！');
-      });
+      }).catch(e => {console.error(e)});
     } else if (role === 'teacher') {
       BackendApiUtil.getStudentInfo(id).then((response) => {
         setTitle(response.data['name'].slice(0, 1) + '老师，欢迎您！');
-      });
+      }).catch(e => {console.error(e)});
     } else if (role === 'manager') {
       BackendApiUtil.getStudentInfo(id).then((response) => {
         setTitle(response.data['name'].slice(0, 1) + '教务，欢迎您！');
-      });
+      }).catch(e => {console.error(e)});
     } else {
-      alert('获取用户信息出错，返回登录界面。');
+      alert('已登出！返回登录界面。');
       navigate('/login');
     }
   });

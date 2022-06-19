@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import logo from 'assets/ecnu_logo_text.svg';
+import logo from "assets/ecnu_logo_text.svg";
 
 const StyledImg = styled.img`
   width: 274px;

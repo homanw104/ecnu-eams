@@ -1,5 +1,5 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import { lightTheme, darkTheme } from 'stylesheet.js'
 
 import NavBarLayout from "./components/layout/NavBarLayout";
@@ -18,6 +18,14 @@ import ScorePage from "./pages/ScorePage";
 
 import { useTheme } from "./util/UseTheme";
 
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: ${props => props.theme['colors'].background};
+  }
+`;
+
+
 function App() {
   const [theme, toggleTheme, componentMounted] = useTheme();
 
@@ -31,6 +39,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+      <GlobalStyle/>
       <HashRouter>
         <Routes>
 

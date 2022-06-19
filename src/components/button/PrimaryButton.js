@@ -4,11 +4,12 @@ import styled from "styled-components";
 
 const StyledButton = styled.button`
   background-color: ${props => props.theme.colors.red900};
-  box-shadow: 0 1px 2px 0 ${props => props.theme.colors.transparentMediumSlateBlue};
+  box-shadow: ${props => props.theme.shadows.xs};
   border-width: 0;
   border-radius: 6px;
   overflow: hidden;
   padding: 0;
+  z-index: 100;
   
   color: ${props => props.theme.colors.white};
   font-family: ${props => props.theme.fonts.textSmMedium.family};
@@ -18,19 +19,20 @@ const StyledButton = styled.button`
   
   &:hover {
     background-color: ${props => props.theme.colors.red800};
-    box-shadow: 0 1px 2px 0 ${props => props.theme.colors.transparentMediumSlateBlue};
+    box-shadow: ${props => props.theme.shadows.xs};
   }
   
   &:active {
+    outline: none;
     background-color: ${props => props.theme.colors.red800};
-    box-shadow: 0 0 0 4px #BBF7D0;
+    box-shadow: ${props => props.theme.shadows.highlight};
   }
 `;
 
 
-const PrimaryButton = ({ className, children, type, onClick }) => {
+const PrimaryButton = ({ className, children, type, onClick, ...props }) => {
   return (
-    <StyledButton className={className} type={type} onClick={onClick}>
+    <StyledButton className={className} type={type} onClick={onClick} {...props}>
       {children}
     </StyledButton>
   );

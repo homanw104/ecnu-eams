@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import Input from "./form/Input";
+import Checkbox from "./form/Checkbox";
 import StampLogo from "./logo/StampLogo";
 import PrimaryButton from "./button/PrimaryButton";
+import TextButton from "./button/TextButton";
 
 import BackendApiUtil from "../util/BackendApiUtil";
 import CookieUtil from "../util/CookieUtil";
@@ -12,6 +14,8 @@ import CookieUtil from "../util/CookieUtil";
 
 const StyledCard = styled.div`
   background-color: ${props => props.theme.colors.gray050};
+  box-shadow: ${props => props.theme.shadows.xs};
+  border-radius: 6px;
   
   position: absolute;
   width: 390px;
@@ -22,9 +26,10 @@ const StyledCard = styled.div`
   bottom: 0;
   margin: auto;
   overflow: hidden;
-
-  border-radius: 6px;
-  box-shadow: 0 1px 2px rgba(85, 105, 135, 0.1);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 `;
 
 const StyledStampLogo = styled(StampLogo)`
@@ -35,6 +40,10 @@ const StyledStampLogo = styled(StampLogo)`
   top: -117px;
 `;
 
+const StyledForm = styled.form`
+  z-index: 100;
+`;
+
 const StyledTitle = styled.div`
   color: ${props => props.theme.colors.gray900};
   font-family: ${props => props.theme.fonts.displaySmBold.family};
@@ -42,42 +51,62 @@ const StyledTitle = styled.div`
   font-weight: ${props => props.theme.fonts.displaySmBold.weight};
   line-height: ${props => props.theme.fonts.displaySmBold.lineHeight};
 
-  position: absolute;
+  margin: 60px 44px 0;
   width: 302px;
   height: 41px;
-  left: 44px;
-  top: 60px;
 `;
 
 const StyledUsernameInput = styled(Input)`
-  position: absolute;
+  margin: 36px 44px 0;
   width: 302px;
   height: 76px;
-  left: 44px;
-  top: 137px;
 `;
 
 const StyledPasswordInput = styled(Input).attrs({ type: 'password' })`
-  position: absolute;
+  margin: 12px 44px 0;
   width: 302px;
   height: 76px;
-  left: 44px;
-  top: 225px;
 `;
 
 const StyledLoginButton = styled(PrimaryButton).attrs({ type: 'submit' })`
-  position: absolute;
+  margin: 20px 44px 70px;
   width: 302px;
   height: 40px;
-  left: calc(50% - 302px/2);
-  top: calc(50% - 40px/2 + 170px);
 `;
 
+const StyledLabel = styled.label`
+  margin: 69px 44px 0;
+  padding: 0 2px;
+  height: 20px;
+  
+  display: flex;
+  align-items: center;
+  justify-items: flex-start;
+  gap: 8px;
+  
+  font-family: ${props => props.theme.fonts.textSmMedium.family};
+  font-size: ${props => props.theme.fonts.textSmMedium.size};
+  font-weight: ${props => props.theme.fonts.textSmMedium.weight};
+  line-height: ${props => props.theme.fonts.textSmMedium.lineHeight};
+`;
+
+const StyledTextButton = styled(TextButton)`
+  display: inline;
+`;
+
+const StyledSpan = styled.span`
+  margin-bottom: 1px;
+`;
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [checked, setChecked] = useState(false);
   const navigate = useNavigate();
+
+  const handleOnClick = () => {
+    window.open('https://portal2020.ecnu.edu.cn/privacy-portal.html', '_blank');
+  };
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
@@ -91,17 +120,23 @@ const LoginForm = () => {
         setPassword('');
       }
     });
-  }
+  };
 
   return(
     <StyledCard>
       <StyledStampLogo/>
-      <StyledTitle>登录</StyledTitle>
-      <form onSubmit={handleOnSubmit}>
+      <StyledForm onSubmit={handleOnSubmit}>
+        <StyledTitle>登录</StyledTitle>
         <StyledUsernameInput onChange={e => setUsername(e.target.value)} value={username} label='用户名' name='username'/>
         <StyledPasswordInput onChange={e => setPassword(e.target.value)} value={password} label='密码' name='password'/>
+        <StyledLabel>
+          <Checkbox checked={checked} onChange={setChecked}/>
+          <StyledSpan>
+            点击登录即表示同意《 <StyledTextButton onClick={handleOnClick}>隐私政策</StyledTextButton> 》
+          </StyledSpan>
+        </StyledLabel>
         <StyledLoginButton>登录</StyledLoginButton>
-      </form>
+      </StyledForm>
     </StyledCard>
   );
 };

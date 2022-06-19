@@ -80,7 +80,7 @@ const SideBar = () => {
         setSubtitle('工号 加载失败');
       });
     } else {
-      alert('获取用户信息出错，返回登录界面。');
+      alert('已登出，请返回登录界面。');
       navigate('/login');
     }
   });
