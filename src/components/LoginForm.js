@@ -20,8 +20,8 @@ const StyledCard = styled.div`
   position: absolute;
   width: 390px;
   height: 520px;
-  left: max(50%, (100vw - 470px) * 0.8 + 235px);
-  right: min(50%, (100vw - 470px) * 0.2 + 235px);
+  left: max(50%, (100vw - 470px) * 0.85 + 235px);
+  right: min(50%, (100vw - 470px) * 0.15 + 235px);
   top: 0;
   bottom: 0;
   margin: auto -195px auto -195px;
